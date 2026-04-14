@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Détails du projet Bataille Navale, un jeu développé en PHP CLI.">
+<title>Bataille Navale – Portfolio BTS SIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="css.style.css">
+</head>
+<body>
+
+<header>
+<nav>
+<ul>
+<li><a href="index.html" class="nav-link">Accueil</a></li>
+<li><a href="about.html" class="nav-link">À propos</a></li>
+<li><a href="skills.html" class="nav-link">Compétences</a></li>
+<li><a href="projects.html" class="nav-link">Projets</a></li>
+<li><a href="stage.html" class="nav-link">Stages</a></li>
+<li><a href="veille.html" class="nav-link">Veille</a></li>
+<li><a href="tableau-synthese.html" class="nav-link">Synthèse</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main class="container page-fade">
+    <a href="projects.html" class="btn" style="margin-bottom: 2rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+    
+    <section class="content-box">
+        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <div style="background: #f5f5f7; padding: 1rem; border-radius: 16px;">
+                <i class="fas fa-ship" style="font-size: 3rem; color: #0071e3;"></i>
+            </div>
+            <div>
+                <span class="eyebrow">Jeu Console (CLI)</span>
+                <h1 style="margin-bottom: 0; font-size: clamp(2rem, 4vw, 2.5rem);">Bataille Navale</h1>
+            </div>
+        </div>
+        <p>Ce projet est une implémentation du célèbre jeu de plateau "Bataille Navale", entièrement jouable dans le terminal en ligne de commande. Il permet à deux joueurs de positionner stratégiquement leur flotte (porte-avions, croiseurs, sous-marins...) sur une grille de 10x10. Le jeu gère l'orientation des bateaux, la validation des placements (chevauchement, débordement) et la mécanique de tir au tour par tour (Touché, Coulé, Manqué) jusqu'à la victoire finale.</p>
+        
+        <h3 style="margin-top: 2rem;">Compétences et Technologies</h3>
+        <div class="skills-list">
+            <span class="skill">PHP</span>
+            <span class="skill">CLI (Ligne de commande)</span>
+            <span class="skill">Algorithmique</span>
+            <span class="skill">Tableaux à 2 Dimensions</span>
+        </div>
+    </section>
+
+    <div class="bento-grid">
+        <section class="content-box span-full">
+            <h2>Aperçu du code source</h2>
+            <p>Le fichier principal contenant toute la logique du jeu (placement et boucles de combat) :</p>
+            <div class="doc-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <a href="Projet Bataille navale/FINI.php" class="doc-card" target="_blank">
+                    <i class="fab fa-php" style="color: #777bb4;"></i>
+                    <span>FINI.php</span>
+                    <small style="color: #86868b; margin-top: 0.5rem;">Jeu complet</small>
+                </a>
+            </div>
+        </section>
+
+        <section class="content-box span-full">
+            <h2>Visuels</h2>
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
+                <img src="bataille_navale.webp" alt="Bannière Bataille Navale" style="max-width: 250px; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+        </section>
+    </div>
+
+    <section class="content-box">
+        <i class="fas fa-graduation-cap section-icon"></i>
+        <h2>Compétences BTS SIO visées</h2>
+        <div class="competency-tags">
+            <span class="competency-tag">B2.3 – Traiter des demandes concernant les applications</span>
+            <span class="competency-tag">B5.1 – Réaliser les tests d'intégration et d'acceptation</span>
+        </div>
+    </section>
+</main>
+
+<footer>
+<p>&copy; 2026 LENOIS-GELAS Nicolas – Portfolio BTS SIO</p>
+</footer>
+
+<script src="js.main.js"></script>
+</body>
+</html>

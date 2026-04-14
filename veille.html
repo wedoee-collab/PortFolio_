@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Veille technologique de Nicolas LENOIS-GELAS – La crise de la RAM aux États-Unis et l'impact de l'IA.">
+<title>Veille – Portfolio BTS SIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="css.style.css">
+<style>
+  .veille-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-top: 1rem;
+  }
+  .veille-table th {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+  .veille-table td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--timeline-line);
+    vertical-align: top;
+    color: var(--text-color-secondary);
+  }
+  .veille-table tbody tr:hover td { background: #f5f8ff; }
+  .veille-table td:first-child { font-weight: 500; color: var(--text-color); }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .stat-card {
+    background: var(--doc-card-bg);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+  }
+  .stat-card .stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.2;
+  }
+  .stat-card .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-color-secondary);
+    margin-top: 0.3rem;
+  }
+
+  .timeline-veille { list-style: none; padding-left: 1.5rem; border-left: 3px solid var(--timeline-line); }
+  .timeline-veille li { position: relative; margin-bottom: 1.2rem; }
+  .timeline-veille li::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 2px solid var(--bg-color);
+  }
+  .timeline-veille .tl-date {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .timeline-veille .tl-content {
+    background: var(--timeline-content-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    color: var(--text-color-secondary);
+  }
+
+  .source-list { list-style: none; padding: 0; margin-top: 1rem; }
+  .source-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--timeline-line);
+    font-size: 0.85rem;
+    color: var(--text-color-secondary);
+  }
+  .source-list li:last-child { border-bottom: none; }
+  .source-list strong { color: var(--text-color); }
+  .source-list a { color: var(--primary-color); word-break: break-all; }
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<ul>
+<li><a href="index.html" class="nav-link">Accueil</a></li>
+<li><a href="about.html" class="nav-link">À propos</a></li>
+<li><a href="skills.html" class="nav-link">Compétences</a></li>
+<li><a href="projects.html" class="nav-link">Projets</a></li>
+<li><a href="stage.html" class="nav-link">Stages</a></li>
+<li><a href="veille.html" class="nav-link">Veille</a></li>
+<li><a href="tableau-synthese.html" class="nav-link">Synthèse</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main class="container page-fade">
+  <span class="eyebrow">Bloc B6 – Développement professionnel · Réf. 2025-26_B1-NICOLAS-LENOISGELAS</span>
+  <h1 style="margin-bottom: 0.25rem;">Veille Technologique</h1>
+  <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">La crise de la RAM aux États-Unis et l'impact de l'IA</p>
+  <p style="margin-bottom: 1.5rem;">Nicolas LENOIS-GELAS · EPSI BTS SIO · Janvier – Avril 2026</p>
+  <div style="margin-bottom: 2rem;">
+    <a href="2025-26_B1-NICOLAS-LENOISGELAS.docx" class="btn" download>
+      <i class="fas fa-download"></i> Télécharger le document Word
+    </a>
+  </div>
+
+  <!-- 1. Introduction -->
+  <section class="content-box">
+    <i class="fas fa-flag section-icon"></i>
+    <h2>1. Introduction et problématique</h2>
+    <p>Depuis 2024-2025, l'IA tire la demande en mémoire vers le haut à une vitesse que personne n'avait vraiment anticipée. Entraîner un modèle, faire tourner un centre de données, gérer des infrastructures cloud : tout ça consomme beaucoup plus de RAM qu'avant. Et le problème, c'est que l'offre n'a pas suivi — surtout aux États-Unis où la majorité des investissements IA est concentrée.</p>
+    <p style="margin-top: 1rem;">Cette pression sur les composants n'est pas nouvelle : on l'avait déjà vue avec les GPU pendant la crise du COVID. Mais cette fois, la demande vient des plus grandes entreprises du monde avec des budgets sans précédent. AWS, Google, Microsoft et Oracle ont annoncé ensemble plus de <strong>500 milliards de dollars</strong> d'investissements en infrastructures IA pour 2025-2026. Chaque serveur embarque des dizaines de modules DDR5, et les fabricants n'ont tout simplement pas la capacité d'y répondre en quelques mois.</p>
+    <div style="background: #eef3ff; border-left: 4px solid var(--primary-color); border-radius: 12px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;">
+      <strong>Problématique :</strong> Comment l'essor de l'IA crée-t-il un problème majeur sur le marché de la RAM aux États-Unis, et quelles en sont les conséquences pour l'industrie informatique mondiale ?
+    </div>
+  </section>
+
+  <!-- 2. Présentation technique -->
+  <section class="content-box">
+    <i class="fas fa-microchip section-icon"></i>
+    <h2>2. Présentation technique de la RAM</h2>
+    <p>La RAM (Random Access Memory) est la mémoire de travail d'un ordinateur. Contrairement à un disque dur ou un SSD, elle perd tout quand on éteint la machine, mais elle est bien plus rapide. Plus un système en a, plus il peut jongler entre les tâches sans ralentir.</p>
+    <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Principaux usages de la RAM aux États-Unis en 2026</h3>
+    <div class="table-wrapper" style="margin-top: 0.5rem;">
+      <table class="veille-table">
+        <thead>
+          <tr><th>Cas d'usage</th><th>Explication</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Jeu vidéo</td><td>Le chargement de textures HD, la physique des jeux AAA et un rendu fluide exigent de grandes quantités de RAM.</td></tr>
+          <tr><td>Intelligence artificielle</td><td>L'entraînement de grands modèles (GPT, DeepSeek, NVIDIA NIM) et les pipelines d'inférence nécessitent un accès massif et parallèle aux données.</td></tr>
+          <tr><td>Multitâche & virtualisation</td><td>Les environnements d'entreprise exécutent des dizaines de machines virtuelles simultanément, chacune nécessitant une allocation dédiée de RAM.</td></tr>
+          <tr><td>Centres de données & cloud</td><td>AWS, Google, Microsoft Azure, Oracle déploient des millions de serveurs, chacun équipé de modules DDR5 de grande capacité.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Méthodologie -->
+  <section class="content-box">
+    <i class="fas fa-search section-icon"></i>
+    <h2>3. Méthodologie de veille</h2>
+    <p>Deux mois de veille, de janvier à mars 2026. L'idée était simple : mettre en place une collecte automatique pour ne rien rater, et compléter avec des recherches manuelles dès qu'un événement méritait qu'on creuse.</p>
+
+    <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Pourquoi ce sujet ?</h3>
+    <p>J'ai choisi la crise de la RAM parce qu'elle relie deux sujets qui m'intéressent : l'IA (dont tout le monde parle) et ce qui se passe réellement au niveau matériel (dont on parle moins). Cela me semblait être un sujet où je pouvais trouver des données concrètes et mesurables — des prix, des baisses d'actions, des décisions d'entreprises — plutôt que de simples tendances abstraites.</p>
+
+    <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Méthode PUSH – Collecte automatisée</h3>
+    <div class="doc-grid" style="margin-top: 0.75rem;">
+      <div class="doc-card">
+        <i class="fab fa-google" style="color: #4285f4;"></i>
+        <span>Google Alerts</span>
+        <small style="color: #86868b; text-align: center;">8 alertes configurées (NVIDIA, pénurie RAM, DDR5 2026, DeepSeek…) envoyées chaque semaine</small>
+      </div>
+      <div class="doc-card">
+        <i class="fas fa-rss" style="color: #f26522;"></i>
+        <span>Feedly</span>
+        <small style="color: #86868b; text-align: center;">Flux RSS – NVIDIA Newsroom et sources d'actualité technologique</small>
+      </div>
+      <div class="doc-card">
+        <i class="fas fa-pen-nib" style="color: #0071e3;"></i>
+        <span>QuillBot</span>
+        <small style="color: #86868b; text-align: center;">Génération de références APA à partir d'URL</small>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Méthode PULL – Recherche manuelle</h3>
+    <p>Une à deux fois par semaine : Google Finance et Yahoo Finance pour les données de prix et de bourse, ainsi que Tom's Hardware, IDC ou Reuters pour des événements précis.</p>
+
+    <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Organisation des informations</h3>
+    <p>Tout a été enregistré dans un fichier PowerPoint, en regroupant les articles, captures d'écran et notes par événement et par date. Le contenu a été classé en trois catégories :</p>
+    <div class="doc-grid" style="margin-top: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+      <div class="doc-card"><i class="fas fa-cog" style="color: #0071e3;"></i><span>Technique</span><small style="color: #86868b; text-align:center;">Lancements produits, spécifications, performances</small></div>
+      <div class="doc-card"><i class="fas fa-chart-line" style="color: #34c759;"></i><span>Financière</span><small style="color: #86868b; text-align:center;">Mouvements boursiers, variations de prix</small></div>
+      <div class="doc-card"><i class="fas fa-globe" style="color: #ff9500;"></i><span>Industrielle / politique</span><small style="color: #86868b; text-align:center;">Chaîne d'approvisionnement, réglementation</small></div>
+    </div>
+  </section>
+
+  <!-- 4. Sources -->
+  <section class="content-box">
+    <i class="fas fa-book section-icon"></i>
+    <h2>4. Sources et classification</h2>
+    <p>Sources sélectionnées selon trois critères : fiabilité, récence (janvier – avril 2026) et pertinence par rapport au thème RAM/IA.</p>
+    <div class="table-wrapper" style="margin-top: 1rem;">
+      <table class="veille-table">
+        <thead>
+          <tr><th>Source</th><th>Domaine</th><th>Utilisation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>IDC</td><td>idc.com</td><td>Analyse officielle de la crise mémoire mondiale (fév. 2026)</td></tr>
+          <tr><td>Tom's Hardware</td><td>tomshardware.com</td><td>Suivi quotidien des prix DDR5/DDR4 aux États-Unis</td></tr>
+          <tr><td>DropReference</td><td>dropreference.com</td><td>Bilan de la pénurie DDR5 par pays et perspectives 2026</td></tr>
+          <tr><td>Bloomberg / Ins. Journal</td><td>insurancejournal.com</td><td>Bilan un an après DeepSeek (jan. 2026)</td></tr>
+          <tr><td>WCCFTech</td><td>wccftech.com</td><td>Stratégie ASUS retour DDR4 (jan. 2026)</td></tr>
+          <tr><td>IPC2U</td><td>ipc2u.com</td><td>Analyse des prix RAM 2026 et stratégies IT</td></tr>
+          <tr><td>Le Monde Informatique</td><td>lemondeinformatique.fr</td><td>Pénurie de mémoires : impact sur les projets IA et marché PC</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 5. Analyse -->
+  <section class="content-box">
+    <i class="fas fa-chart-bar section-icon"></i>
+    <h2>5. Analyse de la crise – États-Unis 2026</h2>
+
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Indicateurs clés</h3>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">×3,69</div>
+        <div class="stat-label">Hausse des prix DDR5 entre oct. 2025 et jan. 2026 — record mondial (DropReference, fév. 2026)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">500 Md$</div>
+        <div class="stat-label">Investissements IA annoncés par AWS, Google, Microsoft et Oracle pour 2025-2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">95 %</div>
+        <div class="stat-label">Part de marché mondiale de la DRAM contrôlée par Samsung, SK Hynix et Micron (IDC, 2026)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">12-18 mois</div>
+        <div class="stat-label">Délai minimum pour augmenter la capacité de production de DRAM</div>
+      </div>
+    </div>
+
+    <h3 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 1rem;">Causes profondes de la pénurie</h3>
+    <ul class="info-list">
+      <li><strong>Demande liée à l'IA :</strong> L'entraînement d'un seul grand modèle peut consommer des centaines de téraoctets de mémoire à large bande passante.</li>
+      <li><strong>Goulot d'étranglement de la production :</strong> Trois entreprises — Samsung, SK Hynix et Micron — contrôlent ~95 % de la production mondiale de DRAM. Augmenter la production prend au minimum 12 à 18 mois.</li>
+      <li><strong>Restrictions à l'exportation :</strong> Les règles américaines sur les puces avancées (comme la NVIDIA H20) ont ajouté de l'incertitude à des chaînes d'approvisionnement déjà sous tension.</li>
+    </ul>
+
+    <h3 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 1rem;">Frise chronologique des événements clés</h3>
+    <ul class="timeline-veille">
+      <li>
+        <span class="tl-date">Septembre 2025</span>
+        <div class="tl-content">Indice de référence des prix DDR5 — les hausses significatives démarrent en octobre.</div>
+      </li>
+      <li>
+        <span class="tl-date">Octobre 2025</span>
+        <div class="tl-content">Début de la flambée des prix DDR5 — kits 32 Go passent de ~100 $ à plus de 150 $ en quelques semaines.</div>
+      </li>
+      <li>
+        <span class="tl-date">27 janvier 2025</span>
+        <div class="tl-content">DeepSeek R1 lancé — onde de choc sur les marchés ; action NVIDIA −17 %.</div>
+      </li>
+      <li>
+        <span class="tl-date">Janvier 2026</span>
+        <div class="tl-content">Pic des prix : multiplicateur ×3,69 confirmé — stocks consommateurs en rupture quasi-totale (DropReference, fév. 2026).</div>
+      </li>
+      <li>
+        <span class="tl-date">Février 2026</span>
+        <div class="tl-content">IDC publie son analyse officielle : la crise menace le marché PC mondial.</div>
+      </li>
+      <li>
+        <span class="tl-date">Mars 2026</span>
+        <div class="tl-content">Tom's Hardware confirme : tous les kits 32 Go DDR5 sous 359 $ ont disparu aux États-Unis.</div>
+      </li>
+      <li>
+        <span class="tl-date">Mars 2026</span>
+        <div class="tl-content">ASUS annonce une augmentation de production de cartes mères DDR4 pour contourner la pénurie DDR5.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 6. Réactions entreprises -->
+  <section class="content-box">
+    <i class="fas fa-building section-icon"></i>
+    <h2>6. Réactions des entreprises et impact boursier</h2>
+
+    <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">La réponse d'ASUS : retour au DDR4</h3>
+    <p>Face aux contraintes d'approvisionnement et aux prix imprévisibles du DDR5, ASUS a adopté une stratégie pragmatique au T1 2026 : augmenter significativement la production de cartes mères compatibles DDR4 (B550, A520, B760M) pour permettre aux utilisateurs de continuer à construire des PC à prix raisonnable. La rumeur selon laquelle ASUS allait fabriquer sa propre RAM a été officiellement démentie fin décembre 2025.</p>
+
+    <h3 style="font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">L'onde de choc DeepSeek (27 jan. 2025)</h3>
+    <p>DeepSeek a lancé son modèle R1 — une IA open source entraînée pour seulement 5,6 M$, contre plus de 100 M$ pour GPT-4. Les marchés ont réagi immédiatement :</p>
+    <div class="table-wrapper" style="margin-top: 0.75rem;">
+      <table class="veille-table">
+        <thead>
+          <tr><th>Entreprise</th><th>Variation boursière</th><th>Contexte</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>NVIDIA</td><td style="color: #ff3b30; font-weight: 600;">−17 % (→ ~118 $)</td><td>Plus grande perte en valeur absolue de l'histoire boursière : −589 Md$</td></tr>
+          <tr><td>Micron</td><td style="color: #ff3b30; font-weight: 600;">−12 %</td><td>Fabricant de RAM directement exposé</td></tr>
+          <tr><td>Broadcom</td><td style="color: #ff3b30; font-weight: 600;">−17 %</td><td>Forte exposition aux dépenses IA</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top: 1rem;">Si l'on peut obtenir des résultats comparables en IA avec beaucoup moins de calcul et de mémoire, l'hypothèse « plus de RAM = meilleure IA » commence à paraître fragile. Cela dit, la demande n'a pas baissé — c'est davantage un signal d'alerte qu'un changement immédiat.</p>
+  </section>
+
+  <!-- 7. Synthèse -->
+  <section class="content-box">
+    <i class="fas fa-clipboard-list section-icon"></i>
+    <h2>7. Synthèse</h2>
+
+    <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem;">Principaux enseignements</h3>
+    <ul class="info-list">
+      <li>Les États-Unis sont plus exposés que tout autre marché, car c'est là que se concentre la majorité des investissements dans l'IA.</li>
+      <li>La structure de production dominée par Samsung, SK Hynix et Micron est un problème structurel qui ne peut pas être résolu rapidement.</li>
+      <li>DeepSeek a soulevé de vraies questions sur le fait de savoir si l'industrie a réellement besoin d'autant de matériel. Mais cela n'a pas encore modifié les comportements.</li>
+      <li>La réponse d'ASUS (retour au DDR4) montre que les grands acteurs s'adaptent concrètement.</li>
+    </ul>
+
+    <h3 style="font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.75rem;">Bilan de la méthode de veille</h3>
+    <div class="table-wrapper">
+      <table class="veille-table">
+        <thead>
+          <tr><th>Méthode / Outil</th><th>Ce qui a bien fonctionné</th><th>Axes d'amélioration</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Alerts</td><td>Collecte automatique régulière, aucun événement majeur manqué</td><td>Quelques articles hors sujet — affiner les mots-clés</td></tr>
+          <tr><td>Feedly (RSS)</td><td>Feed chronologique clair, gain de temps sur la veille quotidienne</td><td>Version gratuite limitée — Inoreader plus adapté pour filtrage avancé</td></tr>
+          <tr><td>Recherche manuelle</td><td>Profondeur sur les événements clés (DeepSeek, ASUS, IDC)</td><td>Chronophage — nécessite une planification hebdomadaire stricte</td></tr>
+          <tr><td>Sources financières</td><td>Données boursières accessibles gratuitement (Google Finance, Yahoo Finance)</td><td>Pas d'accès aux rapports professionnels (Bloomberg, TrendForce payants)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 8. Conclusion -->
+  <section class="content-box">
+    <i class="fas fa-check-circle section-icon"></i>
+    <h2>8. Conclusion</h2>
+    <p>Ce qui semblait au départ être une simple histoire de prix s'est révélé bien plus intéressant : un aperçu concret de la fragilité de la chaîne d'approvisionnement de l'IA. Trois entreprises tiennent presque toute la production mondiale de RAM, la demande dépasse toutes les prévisions, et la géopolitique complique encore le tableau.</p>
+    <p style="margin-top: 1rem;">DeepSeek a rappelé utilement que cette trajectoire n'est pas figée. Si les modèles d'IA continuent de devenir plus efficaces, la demande en matériel massif ralentira peut-être. Mais pour l'instant, les contraintes d'approvisionnement sont bien réelles — et la réponse d'ASUS, qui préfère miser sur du matériel de l'ancienne génération, en dit long sur la gravité de la situation.</p>
+    <p style="margin-top: 1rem;">À plus long terme, plusieurs gouvernements, dont les États-Unis avec le CHIPS Act, investissent massivement pour relocaliser une partie de la production de semi-conducteurs. Mais les effets ne se feront pas sentir avant 2027 ou 2028 au plus tôt.</p>
+    <p style="margin-top: 1rem;">Cette veille m'a aussi permis de mieux comprendre comment un événement technique peut avoir des répercussions concrètes pour des millions d'utilisateurs finaux, qu'ils soient gamers, développeurs ou responsables IT. C'est ce lien entre les décisions industrielles et l'expérience quotidienne qui rend ce sujet particulièrement intéressant à suivre.</p>
+  </section>
+
+  <!-- 9. Sources -->
+  <section class="content-box">
+    <i class="fas fa-link section-icon"></i>
+    <h2>9. Sources et références</h2>
+    <ul class="source-list">
+      <li>
+        <strong>IDC</strong> — Global Memory Shortage Crisis: Market Analysis (10 fév. 2026)<br>
+        <a href="https://www.idc.com/resource-center/blog/global-memory-shortage-crisis-market-analysis-and-the-potential-impact-on-the-smartphone-and-pc-markets-in-2026/" target="_blank" rel="noopener noreferrer">www.idc.com</a>
+      </li>
+      <li>
+        <strong>Tom's Hardware</strong> — RAM Price Index 2026<br>
+        <a href="https://www.tomshardware.com/pc-components/ram/ram-price-index-2026-lowest-price-on-ddr5-and-ddr4-memory-of-all-capacities" target="_blank" rel="noopener noreferrer">www.tomshardware.com</a>
+      </li>
+      <li>
+        <strong>DropReference</strong> — DDR5 RAM Shortage: Price Explosion in 2025, Country-by-Country Review (12 fév. 2026)<br>
+        <a href="https://dropreference.com/en/blog/news/shortage-ddr5-ram-2026" target="_blank" rel="noopener noreferrer">dropreference.com</a>
+      </li>
+      <li>
+        <strong>Bloomberg / Insurance Journal</strong> — Nvidia's Rally Shows DeepSeek Fears Were Unfounded a Year Later (27 jan. 2026)<br>
+        <a href="https://www.insurancejournal.com/news/international/2026/01/27/855640.htm" target="_blank" rel="noopener noreferrer">www.insurancejournal.com</a>
+      </li>
+      <li>
+        <strong>Tom's Hardware</strong> — US RAM crisis hits boiling point — all 32GB DDR5 kits under $359 gone (mars 2026)<br>
+        <a href="https://www.tomshardware.com/pc-components/ram/us-ram-crisis-hits-boiling-point-as-ai-mania-wipes-out-all-32gb-ddr5-kits-under-usd359" target="_blank" rel="noopener noreferrer">www.tomshardware.com</a>
+      </li>
+      <li>
+        <strong>WCCFTech</strong> — Back To DDR4: ASUS Increasing Production of AM4/LGA 1700 Motherboards (jan. 2026)<br>
+        <a href="https://wccftech.com/asus-is-reportedly-increasing-the-production-of-am4-motherboards-in-2026/" target="_blank" rel="noopener noreferrer">wccftech.com</a>
+      </li>
+      <li>
+        <strong>IPC2U</strong> — RAM Prices 2026: Why DDR5 is Expensive & IT Strategies<br>
+        <a href="https://ipc2u.com/articles/knowledge-base/ram-prices-2026/" target="_blank" rel="noopener noreferrer">ipc2u.com</a>
+      </li>
+      <li>
+        <strong>Tom's Hardware</strong> — The RAM pricing crisis has only just started — no normalization before 2027 (jan. 2026)<br>
+        <a href="https://www.tomshardware.com/pc-components/dram/the-ram-pricing-crisis-has-only-just-started-team-group-gm-warns-says-problem-will-get-worse-in-2026-as-dram-and-nand-prices-double-in-one-month" target="_blank" rel="noopener noreferrer">www.tomshardware.com</a>
+      </li>
+      <li>
+        <strong>Le Monde Informatique</strong> — La pénurie de mémoires risque de freiner les projets IA des entreprises (jan. 2026)<br>
+        <a href="https://www.lemondeinformatique.fr/actualites/lire-la-penurie-de-memoires-risque-de-freiner-les-projets-ia-des-entreprises-99165.html" target="_blank" rel="noopener noreferrer">www.lemondeinformatique.fr</a>
+      </li>
+      <li>
+        <strong>Le Monde Informatique</strong> — Le marché PC ralentit à cause de la pénurie de mémoire — recul de 10 % prévu (mars 2026)<br>
+        <a href="https://www.lemondeinformatique.fr/actualites/lire-le-marche-pc-ralentit-a-cause-de-la-penurie-de-memoire-99512.html" target="_blank" rel="noopener noreferrer">www.lemondeinformatique.fr</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Compétences -->
+  <section class="content-box">
+    <i class="fas fa-graduation-cap section-icon"></i>
+    <h2>Compétences BTS SIO visées</h2>
+    <div class="competency-tags">
+      <span class="competency-tag">B6.1 – Mettre en place son environnement d'apprentissage personnel</span>
+      <span class="competency-tag">B6.2 – Mettre en œuvre des outils et stratégies de veille informationnelle</span>
+      <span class="competency-tag">B6.3 – Gérer son identité professionnelle</span>
+      <span class="competency-tag">B6.4 – Développer son projet professionnel</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 LENOIS-GELAS Nicolas – Portfolio BTS SIO</p>
+</footer>
+
+<script src="js.main.js"></script>
+</body>
+</html>

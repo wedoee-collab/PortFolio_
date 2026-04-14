@@ -1,0 +1,288 @@
+/* Reset et variables */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f4f4f4;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Container global (Header utilise Flex, Sections utilisent Block) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+header .container { display: flex; justify-content: space-between; align-items: center; }
+section .container { display: block; }
+
+header h1 { margin: 0; font-size: 1.8rem; }
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+header nav a:hover { color: var(--accent-color); }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h2 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2rem; margin-bottom: 20px; }
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+.btn:hover { background: #c0392b; transform: scale(1.05); }
+
+/* Features Section */
+.features { padding: 60px 0; background: var(--light-bg); text-align: center; flex: 1; }
+.features h3 { margin-bottom: 40px; color: var(--primary-color); }
+/* Modern Grid Layout */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; padding: 20px 0; }
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    width: 100%; box-sizing: border-box; /* Reset pour Grid */
+}
+
+/* Footer */
+footer { background: var(--primary-color); color: #fff; text-align: center; padding: 20px 0; margin-top: auto; }
+
+/* Login & Forms */
+.login-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-bg);
+    padding: 40px 20px;
+}
+/* Force le centrage de la carte dans la section de connexion */
+.login-section .card {
+    margin: 0 auto;
+    flex: none; /* Désactive le comportement flexible par défaut */
+    width: 100%;
+    max-width: 400px; /* On écrase le max-width de 350px pour avoir plus de place */
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+    border-radius: 30px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+.form-group input:focus {
+    background: #fff;
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+.btn-full { width: 100%; border: none; cursor: pointer; font-size: 1rem; border-radius: 30px; box-sizing: border-box; text-align: center; display: block; }
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+.auth-switch a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+.auth-switch a:hover { text-decoration: underline; }
+
+/* Chambres */
+.room-card {
+    padding: 0; /* On enlève le padding par défaut de .card pour coller l'image aux bords */
+    overflow: hidden; /* Pour que l'image respecte les bords arrondis */
+    display: flex;
+    flex-direction: column;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+.room-card .room-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 0; /* Plus d'arrondi sur l'image elle-même */
+    margin-bottom: 0;
+    transition: transform 0.5s ease;
+}
+.room-card:hover .room-img { transform: scale(1.1); }
+
+.room-card .card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+.room-card h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.price-tag {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border: 1px solid #edf2f7;
+}
+.price-tag span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+.price-tag small {
+    font-size: 0.85rem;
+    color: #95a5a6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Reservations Table */
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+.reservations-table th, .reservations-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.reservations-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-right: 5px;
+    color: white;
+    display: inline-block;
+}
+.btn-edit { background-color: #f39c12; }
+.btn-delete { background-color: #e74c3c; }
+.btn-info { background-color: #3498db !important; color: #fff !important; }
+.btn-edit:hover { background-color: #e67e22; }
+.btn-delete:hover { background-color: #c0392b; }
+.btn-info:hover { background-color: #2980b9; }
+
+/* Facture */
+.invoice-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.invoice-details p { margin: 10px 0; display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+.invoice-total { text-align: right; font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-top: 20px; padding-top: 10px; border-top: 2px solid var(--primary-color); }
+.paid-stamp {
+    color: #27ae60;
+    border: 3px solid #27ae60;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transform: rotate(-10deg);
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Filtres et Admin */
+.filter-bar { 
+    text-align: center; 
+    margin: 0 auto 50px auto; 
+    padding: 20px 40px; 
+    background: #fff; 
+    border-radius: 50px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    max-width: 600px;
+    border: 1px solid #eee;
+}
+.filter-bar form { display: flex; justify-content: center; align-items: center; gap: 20px; width: 100%; }
+.filter-bar output { font-weight: bold; font-size: 1.2rem; color: var(--primary-color); min-width: 70px; text-align: left; }
+.stat-card { background: #fff; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); flex: 1; min-width: 200px; }
+.stat-number { font-size: 2.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 5px; }
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    /* Header : On empile le logo et le menu verticalement */
+    header .container { flex-direction: column; text-align: center; }
+    header nav { margin-top: 15px; display: flex; flex-direction: column; gap: 10px; width: 100%; }
+    header nav a { display: block; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px; }
+
+    /* Ajustement de la taille du texte Hero */
+    .hero h2 { font-size: 2rem; }
+    
+    /* Tableaux : Ajout d'un scroll horizontal pour ne pas casser la page */
+    .reservations-table { display: block; overflow-x: auto; white-space: nowrap; }
+    
+    /* Filtres : On empile les éléments du formulaire */
+    .filter-bar { padding: 20px; border-radius: 20px; width: auto; }
+    .filter-bar form { flex-direction: column; gap: 15px; }
+    .filter-bar output { text-align: center; }
+    
+    /* Ajustement des espacements de la grille */
+    .grid { gap: 20px; }
+    
+    /* Login card plus compacte */
+    .login-section { padding: 20px 10px; }
+}
