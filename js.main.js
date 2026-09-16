@@ -21,15 +21,19 @@ function setActiveNav() {
 function setupHamburger() {
   const nav = document.querySelector('nav');
   const ul = nav.querySelector('ul');
+  ul.id = 'nav-menu';
 
   const btn = document.createElement('button');
   btn.className = 'hamburger';
   btn.setAttribute('aria-label', 'Ouvrir le menu');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-controls', 'nav-menu');
   btn.innerHTML = '<span></span><span></span><span></span>';
   nav.insertBefore(btn, ul);
 
   btn.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
     btn.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     btn.classList.toggle('active');
   });
@@ -39,6 +43,7 @@ function setupHamburger() {
     link.addEventListener('click', () => {
       nav.classList.remove('nav-open');
       btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-label', 'Ouvrir le menu');
     });
   });

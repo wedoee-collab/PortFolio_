@@ -26,11 +26,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css.style.css">
 </head>
 <body>
 
+<a href="#contenu" class="skip-link">Aller au contenu</a>
 <header>
 <nav>
 <ul>
@@ -46,7 +47,10 @@
 </nav>
 </header>
 
-<main class="container page-fade">
+<main id="contenu" class="container page-fade">
+  <span class="eyebrow">Savoir-faire</span>
+  <h1 style="margin-bottom: 2rem;">Mes Compétences</h1>
+
 <div class="bento-grid">
 
   <!-- Diplômes -->
@@ -56,13 +60,13 @@
     <ul class="timeline">
       <li>
         <div class="timeline-content">
-          <strong>2026</strong> – BTS Services Informatiques aux Organisations (SIO) · Option SLAM (2ème année)
+          <strong>2025 – 2027</strong> – BTS Services Informatiques aux Organisations (SIO) · Option SLAM
           <span style="display:block;font-size:0.82rem;color:var(--primary-color);margin-top:0.2rem;">EPSI Montpellier · 2ème année en cours</span>
         </div>
       </li>
       <li>
         <div class="timeline-content">
-          <strong>2022</strong> – Baccalauréat Mathématiques et Numérique et Sciences Informatiques (NSI)
+          <strong>2022</strong> – Baccalauréat Général · Spécialités NSI &amp; Mathématiques
         </div>
       </li>
     </ul>
@@ -105,9 +109,23 @@
         <i class="fas fa-microchip" style="color:#0071e3;"></i>
         <span>IoT / C++</span>
       </div>
+    </div>
+  </section>
+
+  <!-- Langues -->
+  <section class="content-box">
+    <i class="fas fa-language section-icon"></i>
+    <h2>Langues</h2>
+    <div class="doc-grid">
       <div class="doc-card">
-        <i class="fas fa-language" style="color:#e34c26;"></i>
+        <i class="fas fa-flag" style="color:#0071e3;"></i>
+        <span>Français</span>
+        <small style="color:#6e6e73;text-align:center;">Langue maternelle</small>
+      </div>
+      <div class="doc-card">
+        <i class="fas fa-language" style="color:#0071e3;"></i>
         <span>Anglais</span>
+        <small style="color:#6e6e73;text-align:center;">Niveau technique (B1/B2)</small>
       </div>
     </div>
   </section>

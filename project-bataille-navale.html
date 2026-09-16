@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Détails du projet Bataille Navale, un jeu développé en PHP CLI.">
+<meta name="description" content="Bataille Navale en PHP jouable dans le terminal : placement de flotte, tir au tour par tour et gestion des tableaux à deux dimensions.">
 <title>Bataille Navale – Portfolio BTS SIO</title>
 <link rel="canonical" href="https://nicolas-lenois-gelas.netlify.app/project-bataille-navale.html">
 <meta property="og:type" content="website">
@@ -11,7 +11,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://nicolas-lenois-gelas.netlify.app/project-bataille-navale.html">
 <meta property="og:title" content="Bataille Navale – Portfolio BTS SIO">
-<meta property="og:description" content="Détails du projet Bataille Navale, un jeu développé en PHP CLI.">
+<meta property="og:description" content="Bataille Navale en PHP jouable dans le terminal : placement de flotte, tir au tour par tour et gestion des tableaux à deux dimensions.">
 <meta property="og:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -19,16 +19,17 @@
 <meta property="og:image:alt" content="Nicolas Lenois-Gelas, etudiant en BTS SIO option SLAM a l'EPSI Montpellier">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bataille Navale – Portfolio BTS SIO">
-<meta name="twitter:description" content="Détails du projet Bataille Navale, un jeu développé en PHP CLI.">
+<meta name="twitter:description" content="Bataille Navale en PHP jouable dans le terminal : placement de flotte, tir au tour par tour et gestion des tableaux à deux dimensions.">
 <meta name="twitter:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta name="author" content="Nicolas LENOIS-GELAS">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css.style.css">
 </head>
 <body>
 
+<a href="#contenu" class="skip-link">Aller au contenu</a>
 <header>
 <nav>
 <ul>
@@ -44,7 +45,7 @@
 </nav>
 </header>
 
-<main class="container page-fade">
+<main id="contenu" class="container page-fade">
     <a href="projects.html" class="btn" style="margin-bottom: 2rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
     
     <section class="content-box">
@@ -59,7 +60,7 @@
         </div>
         <p>Ce projet est une implémentation du célèbre jeu de plateau "Bataille Navale", entièrement jouable dans le terminal en ligne de commande. Il permet à deux joueurs de positionner stratégiquement leur flotte (porte-avions, croiseurs, sous-marins...) sur une grille de 10x10. Le jeu gère l'orientation des bateaux, la validation des placements (chevauchement, débordement) et la mécanique de tir au tour par tour (Touché, Coulé, Manqué) jusqu'à la victoire finale.</p>
         
-        <h3 style="margin-top: 2rem;">Compétences et Technologies</h3>
+        <h2 class="card-title" style="margin-top: 2rem;">Compétences et Technologies</h2>
         <div class="skills-list">
             <span class="skill">PHP</span>
             <span class="skill">CLI (Ligne de commande)</span>
@@ -78,7 +79,7 @@
             <h2>Aperçu du code source</h2>
             <p>Le fichier principal contenant toute la logique du jeu (placement et boucles de combat) :</p>
             <div class="doc-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                <a href="Projet Bataille navale/FINI.php" class="doc-card" target="_blank" rel="noopener noreferrer">
+                <a href="projet-bataille-navale/FINI.php" class="doc-card" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-php" style="color: #777bb4;"></i>
                     <span>FINI.php</span>
                     <small style="color: #6e6e73; margin-top: 0.5rem;">Jeu complet</small>

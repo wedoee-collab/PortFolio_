@@ -24,11 +24,12 @@
 <meta name="author" content="Nicolas LENOIS-GELAS">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css.style.css">
 </head>
 <body>
 
+<a href="#contenu" class="skip-link">Aller au contenu</a>
 <header>
 <nav>
 <ul>
@@ -44,11 +45,12 @@
 </nav>
 </header>
 
-<main class="container page-fade">
+<main id="contenu" class="container page-fade">
 <section class="contact-section content-box">
 <i class="fas fa-paper-plane section-icon"></i>
-<h2>Me Contacter</h2>
-<p>Je suis ouvert aux opportunités et aux discussions. N'hésitez pas à me joindre.</p>
+<span class="eyebrow">Restons en contact</span>
+<h1>Me Contacter</h1>
+<p>Actuellement en 2<sup>ème</sup> année de BTS SIO option SLAM à l'EPSI Montpellier, je recherche un <strong>stage en développement logiciel</strong> et je suis ouvert à toute discussion autour de mes projets.</p>
 <div class="contact-links">
 <a href="mailto:nicolas.lenois@free.fr" class="contact-card">
 <i class="fas fa-envelope"></i>
@@ -58,8 +60,31 @@
 <i class="fab fa-linkedin"></i>
 <span>Profil LinkedIn</span>
 </a>
+<a href="https://github.com/wedoee-collab" target="_blank" rel="noopener noreferrer" class="contact-card">
+<i class="fab fa-github"></i>
+<span>GitHub</span>
+</a>
 </div>
 </section>
+
+<div class="bento-grid">
+  <section class="content-box">
+    <i class="fas fa-location-dot section-icon"></i>
+    <h2>Localisation</h2>
+    <p>Basé à <strong>Montpellier (34)</strong>, titulaire du permis B et véhiculé — mobile sur l'ensemble de la métropole et ses alentours.</p>
+  </section>
+
+  <section class="content-box">
+    <i class="fas fa-file-pdf section-icon"></i>
+    <h2>Mon CV</h2>
+    <p>Parcours, compétences techniques et expériences professionnelles en une page.</p>
+    <div style="margin-top:1.5rem;">
+      <a href="CV_Nicolas.pdf" class="btn" download="CV_Nicolas_LENOIS-GELAS.pdf">
+        <i class="fas fa-download" style="margin-right:0.5rem;"></i>Télécharger mon CV
+      </a>
+    </div>
+  </section>
+</div>
 </main>
 
 <footer>

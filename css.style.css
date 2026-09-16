@@ -73,6 +73,8 @@ nav ul { list-style:none; display:flex; justify-content:center; gap:2rem; }
 h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
 h2 { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
 h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+/* Titre de niveau h2 conservant l'apparence d'un h3 (hierarchie correcte sans changer le design) */
+.card-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: normal; }
 p { font-size: 1.05rem; color: var(--text-color-secondary); font-weight: 400; }
 
 .eyebrow {
@@ -107,8 +109,6 @@ p { font-size: 1.05rem; color: var(--text-color-secondary); font-weight: 400; }
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
 }
-
-.bubble { background:#f0f0f0; padding:1rem 1.5rem; border-radius:24px; display:inline-block; margin:0.5rem 0; }
 
 footer { text-align:center; padding:2rem; color: var(--footer-text); font-size:0.9rem; }
 
@@ -223,26 +223,6 @@ footer { text-align:center; padding:2rem; color: var(--footer-text); font-size:0
 .contact-card span { font-weight: 500; }
 
 /* Styles pour les bulles d'accès rapide */
-.bubble-container {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-.bubble-link {
-  background: var(--bubble-bg);
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-.bubble-link:hover {
-  background: var(--bubble-bg-hover);
-  transform: translateY(-3px);
-}
 
 /* Styles pour la timeline des diplômes */
 .timeline {
@@ -476,34 +456,6 @@ footer { text-align:center; padding:2rem; color: var(--footer-text); font-size:0
 }
 
 /* Veille – cartes articles */
-.veille-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-.veille-card {
-  background: var(--doc-card-bg);
-  border-radius: 20px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.veille-card .tag {
-  background: var(--bubble-bg);
-  color: var(--text-color-secondary);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.2rem 0.7rem;
-  border-radius: 20px;
-  display: inline-block;
-  width: fit-content;
-}
-.veille-card h3 { font-size: 1rem; margin-bottom: 0; }
-.veille-card p { font-size: 0.9rem; margin: 0; }
-.veille-card a { color: var(--primary-color); font-size: 0.85rem; font-weight: 500; text-decoration: none; margin-top: auto; }
-.veille-card a:hover { text-decoration: underline; }
 
 /* Responsive adjustments */
 @media(max-width: 900px) {
@@ -527,5 +479,43 @@ footer { text-align:center; padding:2rem; color: var(--footer-text); font-size:0
   /* Sur mobile, on annule l'effet span-full pour que tout s'empile proprement */
   .span-full {
     grid-column: auto;
+  }
+}
+
+/* --- Accessibilite --------------------------------------------------- */
+
+/* Focus clavier visible : indispensable pour naviguer au Tab (WCAG 2.4.7).
+   :focus-visible ne se declenche pas au clic souris, seulement au clavier. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Lien d'evitement : masque, il apparait au premier Tab */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 12px 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 0; }
+
+/* Respect du reglage systeme "reduire les animations" */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
