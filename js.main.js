@@ -9,10 +9,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Lien actif dans la navigation
 function setActiveNav() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  let currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Les pages de détail d'un projet restent rattachées à l'onglet Projets
+  if (currentPage.startsWith('project-')) { currentPage = 'projects.html'; }
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPage) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 }

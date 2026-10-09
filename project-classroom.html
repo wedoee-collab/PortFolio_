@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Détails du projet ClassRoom, une plateforme éducative de gestion de classe.">
-<title>ClassRoom – Portfolio BTS SIO</title>
+<title>ClassRoom – Nicolas Lenois-Gelas · BTS SIO</title>
 <link rel="canonical" href="https://nicolas-lenois-gelas.netlify.app/project-classroom.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Portfolio Nicolas LENOIS-GELAS">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://nicolas-lenois-gelas.netlify.app/project-classroom.html">
-<meta property="og:title" content="ClassRoom – Portfolio BTS SIO">
+<meta property="og:title" content="ClassRoom – Nicolas Lenois-Gelas · BTS SIO">
 <meta property="og:description" content="Détails du projet ClassRoom, une plateforme éducative de gestion de classe.">
 <meta property="og:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -18,11 +18,13 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nicolas Lenois-Gelas, etudiant en BTS SIO option SLAM a l'EPSI Montpellier">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ClassRoom – Portfolio BTS SIO">
+<meta name="twitter:title" content="ClassRoom – Nicolas Lenois-Gelas · BTS SIO">
 <meta name="twitter:description" content="Détails du projet ClassRoom, une plateforme éducative de gestion de classe.">
 <meta name="twitter:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta name="author" content="Nicolas LENOIS-GELAS">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css.style.css">
@@ -46,62 +48,74 @@
 </header>
 
 <main id="contenu" class="container page-fade">
-    <a href="projects.html" class="btn" style="margin-bottom: 2rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+    <a href="projects.html" class="btn btn-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour aux projets</a>
     
     <section class="content-box">
-        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-            <div style="background: #f5f5f7; padding: 1rem; border-radius: 16px;">
-                <i class="fas fa-chalkboard-teacher" style="font-size: 3rem; color: #0071e3;"></i>
+        <div class="project-header">
+            <div class="project-icon">
+                <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
             </div>
             <div>
                 <span class="eyebrow">Application Logicielle (GUI)</span>
-                <h1 style="margin-bottom: 0; font-size: clamp(2rem, 4vw, 2.5rem);">ClassRoom (Salles)</h1>
+                <h1 class="project-title">ClassRoom (Salles)</h1>
             </div>
         </div>
         <p>Ce projet est une application de bureau développée en Python utilisant la bibliothèque Tkinter. Elle permet de gérer la réservation de salles de classe pour les élèves. L'outil vérifie en temps réel la disponibilité et les chevauchements d'horaires, propose des salles alternatives, et intègre un système complet de pénalités et de statistiques, le tout sauvegardé au format JSON et structuré avec la Programmation Orientée Objet (POO).</p>
         
-        <h2 class="card-title" style="margin-top: 2rem;">Technologies utilisées</h2>
+        <h2 class="card-title mt-2">Technologies utilisées</h2>
         <div class="skills-list">
             <span class="skill">Python</span>
             <span class="skill">Tkinter (Interface graphique)</span>
             <span class="skill">POO (Objet)</span>
             <span class="skill">Fichiers JSON</span>
         </div>
-        <div style="margin-top:1.5rem;">
+        <div class="mt-15">
             <a href="https://github.com/wedoee-collab/ClassRoom" class="btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github" style="margin-right:0.5rem;"></i>Voir sur GitHub
+                <i class="fab fa-github icon-left" aria-hidden="true"></i>Voir sur GitHub
             </a>
         </div>
+    </section>
+
+    <section class="content-box">
+        <i class="fas fa-code section-icon" aria-hidden="true"></i>
+        <h2>Points techniques</h2>
+        <ul class="info-list">
+            <li><strong>Trois classes :</strong> <code>Salle</code>, <code>Eleve</code> et <code>Reservation</code>, chacune avec ses règles (chevauchement d'horaires, droit de réserver, blocage).</li>
+            <li><strong>Règles de réservation :</strong> dix salles, du lundi au vendredi, de 8 h à 18 h. Si la salle est prise, l'application propose les salles libres sur le même créneau.</li>
+            <li><strong>Pénalités :</strong> cinq points par heure de retard, et un élève qui atteint 50 points ne peut plus réserver.</li>
+            <li><strong>Suivi :</strong> historique des actions, statistiques d'occupation et sauvegarde de toutes les données dans un fichier JSON.</li>
+            <li><strong>Code découpé :</strong> les classes, les fonctions métier, la configuration et l'interface Tkinter sont dans quatre fichiers distincts, avec une série de tests lançable depuis l'interface.</li>
+        </ul>
     </section>
 
     <div class="bento-grid">
         <section class="content-box span-full">
             <h2>Aperçu du code source</h2>
             <p>Fichiers gérant l'interface graphique et la logique des données (classes/fonctions) :</p>
-            <div class="doc-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="doc-grid doc-grid--wide">
                 <a href="Projet_Python/fresh/main.py" class="doc-card" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-python" style="color: #3776ab;"></i>
+                    <i class="fab fa-python" style="color: #3776ab;" aria-hidden="true"></i>
                     <span>main.py</span>
-                    <small style="color: #6e6e73; margin-top: 0.5rem;">Interface Tkinter</small>
+                    <small>Interface Tkinter</small>
                 </a>
                 <a href="Projet_Python/fresh/fonctions.py" class="doc-card" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-code" style="color: #0071e3;"></i>
+                    <i class="fas fa-code" style="color: #0071e3;" aria-hidden="true"></i>
                     <span>fonctions.py</span>
-                    <small style="color: #6e6e73; margin-top: 0.5rem;">Logique métier JSON</small>
+                    <small>Logique métier JSON</small>
                 </a>
             </div>
         </section>
 
         <section class="content-box span-full">
             <h2>Visuels</h2>
-            <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
-                <img src="logo-python.webp" alt="Logo Python" style="max-width: 250px; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="visuals">
+                <img class="visual-img visual-img--small" src="logo-python.webp" alt="Logo Python" width="500" height="500" loading="lazy">
             </div>
         </section>
     </div>
 
     <section class="content-box">
-        <i class="fas fa-graduation-cap section-icon"></i>
+        <i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>
         <h2>Compétences BTS SIO visées</h2>
         <div class="competency-tags">
             <span class="competency-tag">B1.1 – Recenser et identifier les ressources numériques (salles)</span>
@@ -117,7 +131,7 @@
 
 <footer>
 <p>&copy; 2026 LENOIS-GELAS Nicolas – Portfolio BTS SIO</p>
-<p style="margin-top:0.4rem;font-size:0.85rem;"><a href="mentions-legales.html" style="color:var(--footer-text);">Mentions légales &amp; confidentialité</a></p>
+<p class="footer-legal"><a href="mentions-legales.html">Mentions légales &amp; confidentialité</a></p>
 </footer>
 
 <script src="js.main.js"></script>

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Bataille Navale en PHP jouable dans le terminal : placement de flotte, tir au tour par tour et gestion des tableaux à deux dimensions.">
-<title>Bataille Navale – Portfolio BTS SIO</title>
+<title>Bataille Navale – Nicolas Lenois-Gelas · BTS SIO</title>
 <link rel="canonical" href="https://nicolas-lenois-gelas.netlify.app/project-bataille-navale.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Portfolio Nicolas LENOIS-GELAS">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://nicolas-lenois-gelas.netlify.app/project-bataille-navale.html">
-<meta property="og:title" content="Bataille Navale – Portfolio BTS SIO">
+<meta property="og:title" content="Bataille Navale – Nicolas Lenois-Gelas · BTS SIO">
 <meta property="og:description" content="Bataille Navale en PHP jouable dans le terminal : placement de flotte, tir au tour par tour et gestion des tableaux à deux dimensions.">
 <meta property="og:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -18,11 +18,13 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nicolas Lenois-Gelas, etudiant en BTS SIO option SLAM a l'EPSI Montpellier">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bataille Navale – Portfolio BTS SIO">
+<meta name="twitter:title" content="Bataille Navale – Nicolas Lenois-Gelas · BTS SIO">
 <meta name="twitter:description" content="Bataille Navale en PHP jouable dans le terminal : placement de flotte, tir au tour par tour et gestion des tableaux à deux dimensions.">
 <meta name="twitter:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta name="author" content="Nicolas LENOIS-GELAS">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css.style.css">
@@ -46,57 +48,69 @@
 </header>
 
 <main id="contenu" class="container page-fade">
-    <a href="projects.html" class="btn" style="margin-bottom: 2rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+    <a href="projects.html" class="btn btn-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour aux projets</a>
     
     <section class="content-box">
-        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-            <div style="background: #f5f5f7; padding: 1rem; border-radius: 16px;">
-                <i class="fas fa-ship" style="font-size: 3rem; color: #0071e3;"></i>
+        <div class="project-header">
+            <div class="project-icon">
+                <i class="fas fa-ship" aria-hidden="true"></i>
             </div>
             <div>
                 <span class="eyebrow">Jeu Console (CLI)</span>
-                <h1 style="margin-bottom: 0; font-size: clamp(2rem, 4vw, 2.5rem);">Bataille Navale</h1>
+                <h1 class="project-title">Bataille Navale</h1>
             </div>
         </div>
         <p>Ce projet est une implémentation du célèbre jeu de plateau "Bataille Navale", entièrement jouable dans le terminal en ligne de commande. Il permet à deux joueurs de positionner stratégiquement leur flotte (porte-avions, croiseurs, sous-marins...) sur une grille de 10x10. Le jeu gère l'orientation des bateaux, la validation des placements (chevauchement, débordement) et la mécanique de tir au tour par tour (Touché, Coulé, Manqué) jusqu'à la victoire finale.</p>
         
-        <h2 class="card-title" style="margin-top: 2rem;">Compétences et Technologies</h2>
+        <h2 class="card-title mt-2">Compétences et Technologies</h2>
         <div class="skills-list">
             <span class="skill">PHP</span>
             <span class="skill">CLI (Ligne de commande)</span>
             <span class="skill">Algorithmique</span>
             <span class="skill">Tableaux à 2 Dimensions</span>
         </div>
-        <div style="margin-top:1.5rem;">
+        <div class="mt-15">
             <a href="https://github.com/wedoee-collab/BatailleNavale" class="btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github" style="margin-right:0.5rem;"></i>Voir sur GitHub
+                <i class="fab fa-github icon-left" aria-hidden="true"></i>Voir sur GitHub
             </a>
         </div>
+    </section>
+
+    <section class="content-box">
+        <i class="fas fa-code section-icon" aria-hidden="true"></i>
+        <h2>Points techniques</h2>
+        <ul class="info-list">
+            <li><strong>Grille :</strong> un tableau à deux dimensions de 10 × 10, initialisé puis affiché dans le terminal à chaque tour.</li>
+            <li><strong>Placement validé :</strong> une fonction vérifie qu'un bateau ne déborde pas de la grille et ne chevauche aucun autre avant de le poser.</li>
+            <li><strong>Tir :</strong> la grille est passée par référence à la fonction de tir, qui la met à jour et annonce le résultat.</li>
+            <li><strong>Fin de partie :</strong> une fonction parcourt la grille pour savoir si tous les bateaux d'un joueur sont coulés.</li>
+            <li><strong>Deux étapes :</strong> une première version avec un seul torpilleur, puis la version complète avec toute la flotte et deux joueurs.</li>
+        </ul>
     </section>
 
     <div class="bento-grid">
         <section class="content-box span-full">
             <h2>Aperçu du code source</h2>
             <p>Le fichier principal contenant toute la logique du jeu (placement et boucles de combat) :</p>
-            <div class="doc-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="doc-grid doc-grid--wide">
                 <a href="projet-bataille-navale/FINI.php" class="doc-card" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-php" style="color: #777bb4;"></i>
+                    <i class="fab fa-php" style="color: #777bb4;" aria-hidden="true"></i>
                     <span>FINI.php</span>
-                    <small style="color: #6e6e73; margin-top: 0.5rem;">Jeu complet</small>
+                    <small>Jeu complet</small>
                 </a>
             </div>
         </section>
 
         <section class="content-box span-full">
             <h2>Visuels</h2>
-            <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
-                <img src="bataille_navale.webp" alt="Bannière Bataille Navale" style="max-width: 250px; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="visuals">
+                <img class="visual-img visual-img--small" src="bataille_navale.webp" alt="Bannière Bataille Navale" width="600" height="600" loading="lazy">
             </div>
         </section>
     </div>
 
     <section class="content-box">
-        <i class="fas fa-graduation-cap section-icon"></i>
+        <i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>
         <h2>Compétences BTS SIO visées</h2>
         <div class="competency-tags">
             <span class="competency-tag">B2.3 – Traiter des demandes concernant les applications</span>
@@ -107,7 +121,7 @@
 
 <footer>
 <p>&copy; 2026 LENOIS-GELAS Nicolas – Portfolio BTS SIO</p>
-<p style="margin-top:0.4rem;font-size:0.85rem;"><a href="mentions-legales.html" style="color:var(--footer-text);">Mentions légales &amp; confidentialité</a></p>
+<p class="footer-legal"><a href="mentions-legales.html">Mentions légales &amp; confidentialité</a></p>
 </footer>
 
 <script src="js.main.js"></script>

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Détails du projet Nanichat, une application de messagerie instantanée.">
-<title>Nanichat – Portfolio BTS SIO</title>
+<title>Nanichat – Nicolas Lenois-Gelas · BTS SIO</title>
 <link rel="canonical" href="https://nicolas-lenois-gelas.netlify.app/project-nanichat.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Portfolio Nicolas LENOIS-GELAS">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://nicolas-lenois-gelas.netlify.app/project-nanichat.html">
-<meta property="og:title" content="Nanichat – Portfolio BTS SIO">
+<meta property="og:title" content="Nanichat – Nicolas Lenois-Gelas · BTS SIO">
 <meta property="og:description" content="Détails du projet Nanichat, une application de messagerie instantanée.">
 <meta property="og:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -18,11 +18,13 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nicolas Lenois-Gelas, etudiant en BTS SIO option SLAM a l'EPSI Montpellier">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nanichat – Portfolio BTS SIO">
+<meta name="twitter:title" content="Nanichat – Nicolas Lenois-Gelas · BTS SIO">
 <meta name="twitter:description" content="Détails du projet Nanichat, une application de messagerie instantanée.">
 <meta name="twitter:image" content="https://nicolas-lenois-gelas.netlify.app/og-image.png">
 <meta name="author" content="Nicolas LENOIS-GELAS">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="css.style.css">
@@ -46,62 +48,74 @@
 </header>
 
 <main id="contenu" class="container page-fade">
-    <a href="projects.html" class="btn" style="margin-bottom: 2rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+    <a href="projects.html" class="btn btn-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour aux projets</a>
     
     <section class="content-box">
-        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-            <div style="background: #f5f5f7; padding: 1rem; border-radius: 16px;">
-                <i class="fas fa-comments" style="font-size: 3rem; color: #0071e3;"></i>
+        <div class="project-header">
+            <div class="project-icon">
+                <i class="fas fa-comments" aria-hidden="true"></i>
             </div>
             <div>
                 <span class="eyebrow">Application Web</span>
-                <h1 style="margin-bottom: 0; font-size: clamp(2rem, 4vw, 2.5rem);">Nanichat</h1>
+                <h1 class="project-title">Nanichat</h1>
             </div>
         </div>
         <p>Nanichat est une application web de messagerie développée en PHP. Elle offre un système avancé de salons de discussion : les utilisateurs peuvent créer des salons publics ou privés, inviter des membres spécifiques, et gérer les droits de chaque espace (propriétaire du salon, administrateur). Le système gère les autorisations dynamiquement pour l'affichage et l'envoi de messages en base de données.</p>
         
-        <h2 class="card-title" style="margin-top: 2rem;">Technologies utilisées</h2>
+        <h2 class="card-title mt-2">Technologies utilisées</h2>
         <div class="skills-list">
             <span class="skill">PHP (Architecture MVC)</span>
             <span class="skill">MySQL / PDO</span>
             <span class="skill">HTML/CSS</span>
             <span class="skill">Gestion de Sessions</span>
         </div>
-        <div style="margin-top:1.5rem;">
+        <div class="mt-15">
             <a href="https://github.com/wedoee-collab/NaniChat" class="btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github" style="margin-right:0.5rem;"></i>Voir sur GitHub
+                <i class="fab fa-github icon-left" aria-hidden="true"></i>Voir sur GitHub
             </a>
         </div>
+    </section>
+
+    <section class="content-box">
+        <i class="fas fa-code section-icon" aria-hidden="true"></i>
+        <h2>Points techniques</h2>
+        <ul class="info-list">
+            <li><strong>Architecture MVC :</strong> des contrôleurs (authentification, chat, administration), trois modèles (utilisateurs, salons, messages) et des vues séparées.</li>
+            <li><strong>Salons publics ou privés :</strong> un salon privé possède une liste de membres autorisés, que seuls son propriétaire et l'administrateur peuvent modifier.</li>
+            <li><strong>Trois niveaux de droits :</strong> administrateur, propriétaire du salon et membre, vérifiés à chaque action.</li>
+            <li><strong>Authentification :</strong> mots de passe hachés avec <code>password_hash</code>, vérifiés avec <code>password_verify</code>, et sessions PHP.</li>
+            <li><strong>Base de données :</strong> trois tables MySQL (<code>users</code>, <code>rooms</code>, <code>messages</code>) interrogées en PDO.</li>
+        </ul>
     </section>
 
     <div class="bento-grid">
         <section class="content-box span-full">
             <h2>Aperçu du code source</h2>
             <p>Extrait de la logique métier et de la gestion de base de données :</p>
-            <div class="doc-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="doc-grid doc-grid--wide">
                 <a href="nanichat/controller/ChatController.php" class="doc-card" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-php" style="color: #777bb4;"></i>
+                    <i class="fab fa-php" style="color: #777bb4;" aria-hidden="true"></i>
                     <span>ChatController.php</span>
-                    <small style="color: #6e6e73; margin-top: 0.5rem;">Logique et routage</small>
+                    <small>Logique et routage</small>
                 </a>
                 <a href="nanichat/modele/RoomModel.php" class="doc-card" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-database" style="color: #00758f;"></i>
+                    <i class="fas fa-database" style="color: #00758f;" aria-hidden="true"></i>
                     <span>RoomModel.php</span>
-                    <small style="color: #6e6e73; margin-top: 0.5rem;">Requêtes SQL PDO</small>
+                    <small>Requêtes SQL PDO</small>
                 </a>
             </div>
         </section>
 
         <section class="content-box span-full">
             <h2>Visuels</h2>
-            <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
-                <img src="nanichat-banniere.webp" alt="Bannière de Nanichat" style="max-width: 100%; max-height: 400px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="visuals">
+                <img class="visual-img" src="nanichat-banniere.webp" alt="Bannière de Nanichat" width="1200" height="800" loading="lazy">
             </div>
         </section>
     </div>
 
     <section class="content-box">
-        <i class="fas fa-graduation-cap section-icon"></i>
+        <i class="fas fa-graduation-cap section-icon" aria-hidden="true"></i>
         <h2>Compétences BTS SIO visées</h2>
         <div class="competency-tags">
             <span class="competency-tag">B1.3 – Mettre en place les niveaux d'habilitation (Admin / Propriétaire / Membre)</span>
@@ -117,7 +131,7 @@
 
 <footer>
 <p>&copy; 2026 LENOIS-GELAS Nicolas – Portfolio BTS SIO</p>
-<p style="margin-top:0.4rem;font-size:0.85rem;"><a href="mentions-legales.html" style="color:var(--footer-text);">Mentions légales &amp; confidentialité</a></p>
+<p class="footer-legal"><a href="mentions-legales.html">Mentions légales &amp; confidentialité</a></p>
 </footer>
 
 <script src="js.main.js"></script>
