@@ -335,7 +335,7 @@ footer { text-align:center; padding:2rem; color: var(--footer-text); font-size:0
   color: var(--primary-color);
 }
 
-/* Stats grid – accueil */
+/* Stats grid : accueil */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -455,7 +455,7 @@ footer { text-align:center; padding:2rem; color: var(--footer-text); font-size:0
   background: #f5f8ff;
 }
 
-/* Veille – cartes articles */
+/* Veille : cartes articles */
 
 /* Responsive adjustments */
 @media(max-width: 900px) {
